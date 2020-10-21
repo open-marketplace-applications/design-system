@@ -1,6 +1,11 @@
 use log::*;
 use yew::prelude::*;
 
+
+use crate::{
+    components::Nav,
+    router::{AppRoutes, Router},
+};
 use design_system::{Theme, Page, Container, H1};
 
 pub struct App {
@@ -9,6 +14,7 @@ pub struct App {
 
 pub enum Msg {
 }
+
 
 impl Component for App {
     type Message = Msg;
@@ -33,9 +39,10 @@ impl Component for App {
         info!("rendered!");
         html! {
             <Theme>
+            <Nav />
                 <Page>
                     <Container>
-                    <H1>{ "OMA Design System" }</H1>
+                    <Router />
                     </Container>
                 </Page>
             </Theme>
