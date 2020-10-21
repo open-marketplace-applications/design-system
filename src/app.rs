@@ -1,6 +1,8 @@
 use log::*;
 use yew::prelude::*;
 
+use design_system::{Theme, Page, Container, H1};
+
 pub struct App {
     link: ComponentLink<Self>,
 }
@@ -30,9 +32,13 @@ impl Component for App {
     fn view(&self) -> Html {
         info!("rendered!");
         html! {
-            <div>
-               <h1>{ "OMA Design System" }</h1>
-            </div>
+            <Theme>
+                <Page>
+                    <Container>
+                    <H1>{ "OMA Design System" }</H1>
+                    </Container>
+                </Page>
+            </Theme>
         }
     }
 }
