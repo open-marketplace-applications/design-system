@@ -1,7 +1,7 @@
 [package]
-name = "yew-wasm-pack-template"
-version = "0.2.0"
-authors = ["Yew Maintainers <maintainers@yew.rs"]
+name = "design-system"
+version = "0.0.1"
+authors = ["r3p0x <svreiser@gmail.com>", "huhn <huhn.dev@gmail.com"]
 edition = "2018"
 
 [lib]
@@ -9,10 +9,6 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 log = "0.4"
-strum = "0.17"
-strum_macros = "0.17"
-serde = "1"
-serde_derive = "1"
 wasm-bindgen = "0.2.58"
 wasm-logger = "0.2"
 wee_alloc = { version = "0.4.4", optional = true }
