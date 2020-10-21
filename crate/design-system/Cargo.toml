@@ -3,6 +3,8 @@ name = "design-system"
 version = "0.0.1"
 authors = ["r3p0x <svreiser@gmail.com>", "huhn <huhn.dev@gmail.com"]
 edition = "2018"
+description = "Design System for Open Marketplace Applications"
+license = "MIT OR Apache-2.0"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
