@@ -1,8 +1,8 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5ba03ba7-ff8b-4c54-94e7-cd5fd76a6737/deploy-status)](https://app.netlify.com/sites/yew-todomvc/deploys)
+# OMA Design System
 
 ## About
 
-This template shows how to create a web app using Yew and wasm-pack. 
+Design System for Open Marketplace Applications.
 
 ## 🚴 Usage
 
