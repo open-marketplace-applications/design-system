@@ -11,12 +11,26 @@ pub struct Menu {
 #[derive(Debug)]
 pub enum Msg {}
 
+#[derive(Debug, Clone, PartialEq)]
+pub enum Orientation {
+    Vertical,
+    Horizontal
+}
+
+impl Default for Orientation {
+  fn default() -> Self {
+      Orientation::Vertical
+  }
+}
+
 #[derive(Clone, PartialEq, Properties, Debug)]
 pub struct Props {
     #[prop_or_default]
     pub children: Children,
     #[prop_or_default]
     pub class: String,
+    #[prop_or_default]
+    pub orientation: Orientation,
 }
 
 impl Component for Menu {
@@ -24,7 +38,8 @@ impl Component for Menu {
   type Properties = Props;
 
   fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-    let style = Style::create("menu", include_str!("menu.scss")).expect("An error occured while creating the style.");
+    let mut style = Style::create("menu", include_str!("menu.scss")).expect("An error occured while creating the style.");
+
     Menu {
       link,
       style,
@@ -41,9 +56,18 @@ impl Component for Menu {
   }
 
   fn view(&self) -> Html {
+    let mut orientation: String = "".into();
+    if self.props.orientation == Orientation::Horizontal {
+      orientation = "horizontal".into();
+      // style = Classes::from(style.to_string()).extend("self.style".to_string());
+    }
     html! {
       <div
-        class=Classes::from(self.props.class.to_string()).extend(self.style.to_string())
+        class=Classes::from(
+          self.props.class.to_string()
+        )
+        .extend(self.style.to_string())
+        .extend(orientation)
       >
         { self.props.children.clone() }
       </div>

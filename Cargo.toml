@@ -17,6 +17,9 @@ yew-router = {version="0.14", features = ["web_sys"] }
 
 design-system = { path = "./crate/design-system" }
 
+pulldown-cmark = "0.6.1"
+
+
 [dev-dependencies]
 wasm-bindgen-test = "0.3"
 

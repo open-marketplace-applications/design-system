@@ -2,7 +2,7 @@ use css_in_rust::Style;
 use yew::{html, prelude::*, Classes, Component, ComponentLink, Html, Properties, ShouldRender};
 
 #[derive(Debug)]
-pub struct Header {
+pub struct TopNav {
     props: Props,
     style: Style,
 }
@@ -18,13 +18,13 @@ pub struct Props {
 #[derive(PartialEq, Debug)]
 pub enum Msg {}
 
-impl Component for Header {
+impl Component for TopNav {
     type Message = Msg;
     type Properties = Props;
 
     fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
         let style =
-            Style::create("header", include_str!("header.scss")).expect("An error occured while creating the style.");
+            Style::create("top_nav", include_str!("top_nav.scss")).expect("An error occured while creating the style.");
         Self { props, style }
     }
 

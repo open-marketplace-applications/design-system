@@ -2,13 +2,15 @@ use yew::{html, Component, ComponentLink, Html, ShouldRender};
 use yew_router::{prelude::*, route::Route, router::Router as YewRouter, switch::Permissive, Switch};
 
 use crate::page::{
-    ButtonPage, HomePage
+    ButtonPage, HomePage, Introduction
 };
 
 #[derive(Switch, Debug, Clone)]
 pub enum AppRoutes {
     #[to = "/!"]
     RootPath,
+    #[to = "/introduction!"]
+    Introduction,
     #[to = "/button!"]
     ButtonPath,
     #[to = "/page-not-found"]
@@ -41,6 +43,7 @@ impl Component for Router {
                 render = YewRouter::render(move |switch: AppRoutes | {
                     match switch {
                         AppRoutes::RootPath => html!{<HomePage/>},
+                        AppRoutes::Introduction => html!{<Introduction/>},
                         AppRoutes::ButtonPath => html!{<ButtonPage/>},
                         AppRoutes::PageNotFound(Permissive(None)) => html!{"Page not found"},
                         AppRoutes::PageNotFound(Permissive(Some(missed_route))) => html!{format!("Page '{}' not found", missed_route)}

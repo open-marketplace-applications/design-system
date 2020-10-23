@@ -5,7 +5,7 @@ use yew::prelude::*;
 use crate::Icon;
 
 #[derive(Debug)]
-pub struct MenuItem {
+pub struct SideNav {
     link: ComponentLink<Self>,
     style: Style,
     props: Props,
@@ -26,14 +26,14 @@ pub struct Props {
   pub icon: &'static str,
 }
 
-impl Component for MenuItem {
+impl Component for SideNav {
   type Message = Msg;
   type Properties = Props;
 
   fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-    let style = Style::create("menu_item", include_str!("menu_item.scss")).expect("An error occured while creating the style.");
+    let style = Style::create("side_nav", include_str!("side_nav.scss")).expect("An error occured while creating the style.");
     
-    MenuItem {
+    SideNav {
       link,
       style,
       props: props.to_owned(),
@@ -54,11 +54,7 @@ impl Component for MenuItem {
       <div
           class=Classes::from(self.props.class.to_string()).extend(self.style.to_string())
         >
-        {render_icon(self.props.icon.clone())}
-        {render_text(self.props.text.clone())}
-        <div class="options">
-          { self.props.children.clone() }
-        </div>
+        { self.props.children.clone() }
       </div>
     }
   }

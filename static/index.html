@@ -3,8 +3,31 @@
     <head>
         <meta charset="utf-8" />
         <title>#OMA Design System</title>
-           </head>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            ::-webkit-scrollbar {
+                    width: 5px;
+                }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.25);
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Roboto+Mono&display=swap" rel="stylesheet">
+    </head>
     <body>
         <script src="design-system.js"></script>
     </body>
+    
 </html>

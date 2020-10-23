@@ -2,3 +2,12 @@
   display: flex;
   justify-content: flex-start;
 }
+
+&.horizontal {
+  flex-direction: column;
+}
+
+&.horizontal [class*="menu_item"] {
+  margin-bottom: 20px;
+  margin-right: 0;
+}

@@ -2,7 +2,7 @@ use css_in_rust::Style;
 use yew::{html, prelude::*, Classes, Component, ComponentLink, Html, Properties, ShouldRender};
 
 #[derive(Debug)]
-pub struct Button {
+pub struct Layout {
     props: Props,
     style: Style,
 }
@@ -18,13 +18,13 @@ pub struct Props {
 #[derive(PartialEq, Debug)]
 pub enum Msg {}
 
-impl Component for Button {
+impl Component for Layout {
     type Message = Msg;
     type Properties = Props;
 
     fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
         let style =
-            Style::create("button", include_str!("button.scss")).expect("An error occured while creating the style.");
+            Style::create("layout", include_str!("layout.scss")).expect("An error occured while creating the style.");
         Self { props, style }
     }
 
@@ -50,12 +50,4 @@ impl Component for Button {
             </div>
         }
     }
-}
-
-
-impl Button {
-    pub fn get_docs_string() -> String {
-        "# Docs string".into()
-    }
-        
 }

@@ -61,10 +61,15 @@ impl Component for Icon {
         let mut svg = "";
 
         match self.props.name {
-            "label" => svg = include_str!("icons/label.svg"),
-            "scan" => svg = include_str!("icons/scan.svg"),
+            "atom" => svg = include_str!("icons/atom.svg"),
             "chat" => svg = include_str!("icons/chat.svg"),
             "cart" => svg = include_str!("icons/cart.svg"),
+            "label" => svg = include_str!("icons/label.svg"),
+            "molecule" => svg = include_str!("icons/molecule.svg"),
+            "organism" => svg = include_str!("icons/organism.svg"),
+            "page" => svg = include_str!("icons/page.svg"),
+            "scan" => svg = include_str!("icons/scan.svg"),
+            "template" => svg = include_str!("icons/template.svg"),
             // TODO: ADD Default icon
             _ => println!("Ain't special"),
         }

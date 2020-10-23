@@ -4,6 +4,7 @@ mod app;
 mod router;
 mod page;
 mod components;
+mod layout;
 
 #[macro_use]
 extern crate wasm_bindgen;

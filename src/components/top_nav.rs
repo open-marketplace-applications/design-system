@@ -3,16 +3,16 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 
 // 📚 Design System
-use design_system::{Header, Logo, Menu, MenuItem, Tooltip};
+use design_system::{TopNav as Nav, Logo, Menu, MenuItem, Tooltip};
 
-pub struct Nav {
+pub struct TopNav {
     props: Props,
 }
 
 #[derive(Properties, Clone)]
 pub struct Props {}
 
-impl Component for Nav {
+impl Component for TopNav {
     type Message = ();
     type Properties = Props;
 
@@ -30,7 +30,7 @@ impl Component for Nav {
 
     fn view(&self) -> Html {
         html! {
-            <Header>
+            <Nav>
               <Menu>
                 <RouterAnchor<AppRoutes> route=AppRoutes::RootPath>
                   <Logo />
@@ -45,7 +45,7 @@ impl Component for Nav {
                 </RouterAnchor<AppRoutes>>
               </Menu>
 
-            </Header>
+            </Nav>
         }
     }
 }
