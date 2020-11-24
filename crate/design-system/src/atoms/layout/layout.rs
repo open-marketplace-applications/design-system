@@ -23,8 +23,8 @@ impl Component for Layout {
     type Properties = Props;
 
     fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        let style =
-            Style::create("layout", include_str!("layout.scss")).expect("An error occured while creating the style.");
+        let style = Style::create("layout", include_str!("layout.scss"))
+            .expect("An error occured while creating the style.");
         Self { props, style }
     }
 
@@ -43,9 +43,7 @@ impl Component for Layout {
 
     fn view(&self) -> Html {
         html! {
-            <div
-                class=Classes::from(self.props.class.to_string()).extend(self.style.to_string())
-            >
+            <div class=Classes::from(self.props.class.to_string()).extend(self.style.to_string())>
                 { self.props.children.clone() }
             </div>
         }

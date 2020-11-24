@@ -1,3 +1,18 @@
 & {
-  
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  outline: none;
+  margin-right: 20px;
+  border: var(--border);
+  font-weight: var(--font-bold);
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--color-white);
+  background-color: var(--primary);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+&:hover {
+  background-color: var(--primary_light);
 }

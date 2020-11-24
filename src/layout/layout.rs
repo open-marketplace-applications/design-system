@@ -1,12 +1,10 @@
-use yew::prelude::*;
 use design_system::{Layout as PageLayout, Page};
+use yew::prelude::*;
 
-use crate::{
-    components::{TopNav, SideNav},
-};
+use crate::components::SideNav;
 
 pub struct Layout {
-    props: Props
+    props: Props,
 }
 
 #[derive(Clone, PartialEq, Properties, Debug)]
@@ -20,10 +18,7 @@ impl Component for Layout {
     type Properties = Props;
 
     fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        
-        Layout {
-            props
-        }
+        Layout { props }
     }
 
     fn update(&mut self, _: Self::Message) -> ShouldRender {
@@ -37,7 +32,6 @@ impl Component for Layout {
     fn view(&self) -> Html {
         html! {
             <PageLayout>
-                <TopNav />
                 <SideNav />
                 <Page>
                     { self.props.children.clone() }

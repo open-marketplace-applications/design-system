@@ -1,8 +1,7 @@
 use css_in_rust::Style;
 use yew::prelude::*;
 
-#[derive(Debug)]
-pub struct Logo {
+pub struct Canvas {
   link: ComponentLink<Self>,
   style: Style,
   props: Props,
@@ -11,7 +10,7 @@ pub struct Logo {
 #[derive(Debug)]
 pub enum Msg {}
 
-#[derive(Clone, PartialEq, Properties, Debug)]
+#[derive(Properties, Clone)]
 pub struct Props {
   #[prop_or_default]
   pub children: Children,
@@ -19,14 +18,14 @@ pub struct Props {
   pub class: String,
 }
 
-impl Component for Logo {
+impl Component for Canvas {
   type Message = Msg;
   type Properties = Props;
 
   fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-    let style = Style::create("logo", include_str!("logo.scss"))
+    let style = Style::create("canvas", include_str!("canvas.scss"))
       .expect("An error occured while creating the style.");
-    Logo {
+    Canvas {
       link,
       style,
       props: props.to_owned(),
@@ -43,12 +42,11 @@ impl Component for Logo {
 
   fn view(&self) -> Html {
     html! {
-      <div
-        class=Classes::from(self.props.class.to_string()).extend(self.style.to_string())
-      >
-        <img src="/logo.svg" />
-        <span>{ self.props.children.clone() }</span>
-      </div>
+        <div
+          class=Classes::from(self.props.class.to_string()).extend(self.style.to_string())
+        >
+          { self.props.children.clone() }
+        </div>
     }
   }
 }

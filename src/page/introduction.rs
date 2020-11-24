@@ -21,7 +21,7 @@ impl Component for Introduction {
     fn view(&self) -> Html {
         html! {
             <div>
-                <h1>{ "sup introduction?" }</h1>
+                <h1>{ "👋 Get Started" }</h1>
             </div>
         }
     }

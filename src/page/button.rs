@@ -1,14 +1,14 @@
+use web_sys::Element;
 use yew::prelude::*;
 use yew::NodeRef;
-use web_sys::Element;
 
+use crate::components::Canvas;
+use design_system::{Button, Section};
 use pulldown_cmark::{html::push_html, Options, Parser};
-use design_system::Button;
 
 pub struct ButtonPage {
     content: String,
     node_ref: NodeRef,
-
 }
 
 impl Component for ButtonPage {
@@ -16,7 +16,6 @@ impl Component for ButtonPage {
     type Properties = ();
 
     fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-
         let mut options = Options::empty();
         options.insert(Options::ENABLE_TABLES);
         options.insert(Options::ENABLE_FOOTNOTES);
@@ -31,7 +30,7 @@ impl Component for ButtonPage {
 
         ButtonPage {
             content: parsed_text,
-            node_ref: NodeRef::default()
+            node_ref: NodeRef::default(),
         }
     }
 
@@ -43,7 +42,6 @@ impl Component for ButtonPage {
         false
     }
 
-
     fn rendered(&mut self, _first_render: bool) {
         let el = self.node_ref.cast::<Element>().unwrap();
         el.set_inner_html(&self.content);
@@ -51,9 +49,55 @@ impl Component for ButtonPage {
 
     fn view(&self) -> Html {
         html! {
-            <div>
-                <div ref=self.node_ref.clone()/>
-            </div>
+            <>
+                <Section class="transparent">
+                    <h1>{"Button"}</h1>
+                </Section>
+                <Section class="transparent">
+                    <h2>{"🖥 Canvas"}</h2>
+                    <Canvas>
+                        <Button>{"Example Button"}</Button>
+                    </Canvas>
+                </Section>
+                <Section class="transparent">
+                    <h2>{"✨ Props"}</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{"Name"}</th>
+                                <th>{"Description"}</th>
+                                <th>{"Default"}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{"type"}</td>
+                                <td>{"button | submit | reset"}</td>
+                                <td>{"button"}</td>
+                            </tr>
+                            <tr>
+                                <td>{"size"}</td>
+                                <td>{"sm | md | lg"}</td>
+                                <td>{"md"}</td>
+                            </tr>
+                            <tr>
+                                <td>{"color"}</td>
+                                <td>{"primary | black | dark | light | white"}</td>
+                                <td>{"primary"}</td>
+                            </tr>
+                            <tr>
+                                <td>{"block"}</td>
+                                <td>{"true | false"}</td>
+                                <td>{"false"}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </Section>
+                <Section class="transparent">
+                    <h2>{"📚 Docs"}</h2>
+                    <div ref=self.node_ref.clone() />
+                </Section>
+            </>
         }
     }
 }

@@ -1,6 +1,6 @@
 & {
-  --primary: #4cb6c2;
-  --primary_light: #55cfdd;
+  --primary: hsl(186, 49%, 53%);
+  --primary_light: hsl(186, 49%, 60%);
   --white: #ffffff;
   --light: #eff3f4;
   --light-grey: #dce4e6;
@@ -9,7 +9,8 @@
   --black: #0f282b;
   --font-family: 'Open Sans';
   --radius: 10px;
-  --box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  --box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+  --box-shadow_primary: 0 0 6px rgba(76, 182, 194, 0.25);
   --transition: all ease-in-out 300ms;
   --transition-cubic: all cubic-bezier(0.17, 0.67, 0.83, 0.67) 200ms;
 }
@@ -41,6 +42,11 @@ code {
   font-family: 'Roboto Mono', monospace !important;
   color: var(--white);
   font-size: 12px;
+}
+
+hr {
+  border: 0.25px solid rgba(255, 255, 255, 0.15);
+  margin: 20px 0;
 }
 
 ul[class],
@@ -107,6 +113,46 @@ h6,
 a,
 button {
   font-weight: 800;
+}
+
+h2 {
+  margin-bottom: 12px;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+th {
+  padding: 6px 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+td {
+  padding: 12px;
+  background-color: var(--black);
+}
+
+tbody {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+tr:first-child td:first-child {
+  border-radius: 10px 0 0 0;
+}
+
+tr:first-child td:last-child {
+  border-radius: 0 10px 0 0;
+}
+
+tr:last-child td:first-child {
+  border-radius: 0 0 0 10px;
+}
+
+tr:last-child td:last-child {
+  border-radius: 0 0 10px 0;
 }
 
 .navbar_cart_value {

@@ -6,7 +6,8 @@
   transition: var(--transition);
 }
 
-&.active, &:hover {
+&.active,
+&:hover {
   max-height: 100%;
 }
 
@@ -15,11 +16,11 @@
 }
 
 &.active .header {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 &:hover .header {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .header {
@@ -28,6 +29,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .header span {
@@ -46,13 +50,13 @@
   align-items: stretch;
 }
 
-.options [class*="menu_item"] {
+.options [class*='menu_item'] {
   margin-bottom: 0;
   margin-right: 0;
   border-radius: 0;
   justify-content: flex-start;
 }
 
-.options [class*="menu_item"] span {
+.options [class*='menu_item'] span {
   font-weight: 400;
 }

@@ -23,8 +23,8 @@ impl Component for Button {
     type Properties = Props;
 
     fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        let style =
-            Style::create("button", include_str!("button.scss")).expect("An error occured while creating the style.");
+        let style = Style::create("button", include_str!("button.scss"))
+            .expect("An error occured while creating the style.");
         Self { props, style }
     }
 
@@ -52,10 +52,8 @@ impl Component for Button {
     }
 }
 
-
 impl Button {
     pub fn get_docs_string() -> String {
         "# Docs string".into()
     }
-        
 }

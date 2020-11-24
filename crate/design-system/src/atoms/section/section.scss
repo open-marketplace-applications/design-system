@@ -1,5 +1,11 @@
 & {
-  margin-bottom: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: var(--radius);
+}
+
+&.transparent {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 &.light {
@@ -14,6 +20,8 @@
   background-color: var(--black);
 }
 
-&.black *, &.dark * {
+&.transparent *,
+&.black *,
+&.dark * {
   color: var(--white);
 }
